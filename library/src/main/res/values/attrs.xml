@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="TypefaceTextView">
+        <attr name="customFont" format="string" />
+    </declare-styleable>
+
+    <declare-styleable name="ColoredRatingBar">
+        <attr name="indicator" format="boolean" />
+        <attr name="rating" format="float" />
+    </declare-styleable>
+
+    <declare-styleable name="JNTextInputView">
+        <attr name="titleColor" format="integer" />
+        <attr name="title" format="string" />
+        <attr name="hint" format="string" />
+        <attr name="weight" format="float" />
+        <attr name="inputType" format="enum">
+            <enum name="phone" value="0" />
+            <enum name="email" value="1" />
+            <enum name="number" value="2" />
+            <enum name="password" value="3" />
+            <enum name="normal" value="4" />
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="TabBarButton">
+        <attr name="tabName" format="string" />
+        <attr name="tabIcon" format="integer" />
+        <attr name="tabType" format="enum">
+            <enum name="service" value="0" />
+            <enum name="history" value="1" />
+            <enum name="request" value="2" />
+            <enum name="notification" value="3" />
+            <enum name="more" value="4" />
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="JNImageView">
+        <attr name="src" format="integer" />
+        <attr name="isCircle" format="boolean" />
+    </declare-styleable>
+</resources>

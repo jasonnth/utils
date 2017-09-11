@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="sf_ui_text_light" translatable="false">SFUIText-Light.ttf</string>
+    <string name="sf_ui_text_medium" translatable="false">SFUIText-Medium.ttf</string>
+    <string name="sf_ui_text_regular" translatable="false">SFUIText-Regular.ttf</string>
+    <string name="sf_ui_text_bold" translatable="false">SFUIText-Bold.ttf</string>
+    <string name="sf_ui_text_semi_bold" translatable="false">SFUIText-Semibold.ttf</string>
+    <string name="sf_ui_display_regular" translatable="false">SFUIDisplay-Regular.ttf</string>
+</resources>

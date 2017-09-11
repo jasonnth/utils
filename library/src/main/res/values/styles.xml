@@ -1,0 +1,227 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:screenOrientation">portrait</item>
+        <item name="android:configChanges">keyboardHidden|orientation|screenSize</item>
+        <item name="android:actionModeBackground">@android:color/background_dark</item>
+        <item name="android:alertDialogTheme">@style/AppCompatAlertDialogStyle</item>
+        <item name="android:actionMenuTextColor">@android:color/black</item>
+        <item name="actionMenuTextColor">@android:color/black</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar" parent="AppTheme">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:actionModeBackground">@color/colorAccent</item>
+        <item name="android:actionMenuTextColor">@android:color/black</item>
+        <item name="actionMenuTextColor">@android:color/black</item>
+    </style>
+
+    <style name="Theme_Translucent" parent="AppTheme.NoActionBar">
+        <item name="android:statusBarColor" tools:ignore="NewApi">@android:color/transparent</item>
+        <item name="android:windowTranslucentStatus" tools:ignore="NewApi">true</item>
+    </style>
+
+    <style name="Theme.Splash" parent="AppTheme.NoActionBar">
+        <item name="android:windowBackground">@color/colorPrimary</item>
+        <item name="android:statusBarColor" tools:ignore="NewApi">@color/colorPrimary</item>
+    </style>
+
+    <style name="Theme.Transparent" parent="Theme_Translucent">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+
+    <!--Dark action bar and color primary is blue-->
+    <style name="AppTheme.NoActionBar.Blue" parent="Theme_Translucent">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowSoftInputMode">adjustResize|stateAlwaysHidden</item>
+        <item name="android:screenOrientation">portrait</item>
+        <item name="android:configChanges">keyboardHidden|orientation|screenSize</item>
+        <item name="android:actionModeBackground">@android:color/background_dark</item>
+        <item name="android:alertDialogTheme">@style/AppCompatAlertDialogStyle</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="AppCompatAlertDialogStyle" parent="Theme.Dialog">
+        <item name="android:textColorPrimary">@android:color/black</item>
+        <item name="android:textColorSecondary">@color/colorAccent</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:background">@drawable/dialog_background</item>
+        <item name="android:actionModeBackground">@color/colorAccent</item>
+        <item name="android:windowDrawsSystemBarBackgrounds" tools:ignore="NewApi">true</item>
+        <item name="android:statusBarColor" tools:ignore="NewApi">@android:color/transparent</item>
+    </style>
+
+    <style name="Theme.Dialog" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="CommonTextViewStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/text_color</item>
+        <item name="android:textSize">@dimen/text_size_default</item>
+        <item name="android:textAppearance">?android:attr/textAppearanceMedium</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:colorBackground">@android:color/transparent</item>
+        <item name="android:autoLink">none</item>
+        <item name="android:textColorLink">@color/text_color</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
+    <style name="CommonEditTextStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/text_color</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:minLines">1</item>
+        <item name="android:textAppearance">?android:attr/textAppearanceMedium</item>
+        <item name="android:textColorHint">@color/color_hint</item>
+        <item name="android:inputType">textCapSentences</item>
+        <item name="android:textSize">@dimen/input_text_size</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
+    <style name="CommonEditTextLargeStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/text_color</item>
+        <item name="android:textAppearance">?android:attr/textAppearanceMedium</item>
+        <item name="android:inputType">textMultiLine|textCapSentences</item>
+        <item name="android:gravity">top|left</item>
+        <item name="android:textColorHint">@color/color_hint</item>
+        <item name="android:textSize">@dimen/body_1_text_size</item>
+    </style>
+
+    <style name="RecyclerView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:clipToPadding">true</item>
+        <item name="android:overScrollMode">never</item>
+    </style>
+
+    <style name="CommonGridViewStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:clipToPadding">true</item>
+    </style>
+
+
+    <style name="CommonGridCardViewStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:clipToPadding">false</item>
+        <item name="android:background">@android:color/white</item>
+    </style>
+
+
+    <style name="CommonButtonStyle" parent="Widget.AppCompat.Button.Colored">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/button_medium_height</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textSize">@dimen/button_text_size</item>
+        <item name="colorButtonNormal">@color/colorAccent</item>
+        <item name="colorControlHighlight">@color/colorAccent</item>
+        <item name="android:colorButtonNormal" tools:ignore="NewApi">@color/colorAccent</item>
+        <item name="android:colorControlHighlight" tools:ignore="NewApi">@color/colorAccent</item>
+    </style>
+
+    <style name="CommonButtonBarStyle">
+        <item name="android:layout_width">@dimen/button_medium_height</item>
+        <item name="android:layout_height">?actionBarSize</item>
+        <item name="android:textColor">@color/text_color_white_state</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">@dimen/button_text_size</item>
+        <item name="android:background">?selectableItemBackgroundBorderless</item>
+    </style>
+
+    <style name="ProgressBarStyle.Center" parent="Widget.AppCompat.ProgressBar">
+        <item name="android:layout_width">50dp</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:indeterminate">true</item>
+        <item name="android:progressTint" tools:ignore="NewApi">@color/colorAccent</item>
+    </style>
+
+    <style name="ProgressBarStyle.Horizontal" parent="Widget.AppCompat.ProgressBar.Horizontal">
+        <item name="colorAccent">?attr/colorPrimary</item>
+        <item name="android:layout_width">@dimen/button_height</item>
+        <item name="android:layout_height">@dimen/button_height</item>
+        <item name="android:indeterminate">true</item>
+    </style>
+
+    <style name="AnimationFadeStyle">
+        <item name="android:windowEnterAnimation">@android:anim/fade_in</item>
+        <item name="android:windowExitAnimation">@android:anim/fade_out</item>
+    </style>
+
+    <style name="Button.gray" parent="CommonButtonStyle">
+        <item name="android:textColor">@android:color/black</item>
+        <item name="colorButtonNormal">@color/gray</item>
+        <item name="colorControlHighlight">@color/gray_dark</item>
+        <item name="android:colorButtonNormal" tools:ignore="NewApi">@color/gray</item>
+        <item name="android:colorControlHighlight" tools:ignore="NewApi">@color/gray_dark</item>
+    </style>
+
+    <style name="Button.Flat" parent="CommonButtonStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:background">?selectableItemBackgroundBorderless</item>
+        <item name="android:textColor">@color/colorAccent</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <style name="EditText.Box" parent="@style/CommonEditTextStyle">
+        <item name="android:background">@drawable/draw_edit_text_box</item>
+        <item name="android:padding">@dimen/padding_small</item>
+    </style>
+
+    <style name="EditText.UnderLine" parent="@style/CommonEditTextStyle">
+        <item name="android:background">@drawable/draw_edit_text_under_line</item>
+        <item name="android:paddingTop">@dimen/padding_small</item>
+        <item name="android:paddingBottom">@dimen/padding_small</item>
+    </style>
+
+    <style name="EditText.None" parent="@style/CommonEditTextStyle">
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">@dimen/edit_text</item>
+    </style>
+
+    <style name="TextView.Accent" parent="@style/CommonTextViewStyle">
+        <item name="android:textColor">@color/colorAccent</item>
+    </style>
+
+    <style name="TextView.Error" parent="@style/CommonTextViewStyle">
+        <item name="android:textSize">@dimen/body_1_text_size</item>
+        <item name="android:textColor">@color/red</item>
+    </style>
+
+    <style name="CommonDividerStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0.5dp</item>
+        <item name="android:background">@color/gray</item>
+    </style>
+
+    <style name="InputViewStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@android:color/white</item>
+        <item name="android:paddingLeft">@dimen/padding_medium</item>
+        <item name="android:paddingRight">@dimen/padding_medium</item>
+    </style>
+</resources>
+

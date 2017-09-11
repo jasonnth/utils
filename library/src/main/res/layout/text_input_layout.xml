@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/mInputRootView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/white"
+    android:gravity="center_vertical"
+    android:orientation="horizontal">
+
+    <com.jasonngo.views.JNTextView
+        android:id="@+id/mInputTextView"
+        style="@style/CommonTextViewStyle"
+        android:textSize="@dimen/subhead_text_size" />
+
+    <LinearLayout
+        android:id="@+id/mInputContentView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/padding_very_large"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <com.jasonngo.views.JNEditView
+            android:id="@+id/mInputEditView"
+            style="@style/EditText.None"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:hint="input" />
+
+        <ImageButton
+            android:id="@+id/mInputShowPassword"
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_eye_hide"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+</LinearLayout>
