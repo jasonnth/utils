@@ -20,7 +20,7 @@ import android.widget.TextView;
 /**
  * Created by au.com.crimerates on 6/19/15.
  */
-public class SlidingTabLayout extends HorizontalScrollView {
+public class JNTabLayout extends HorizontalScrollView {
 
     /**
      * Allows complete control over the colors drawn in the tab layout. Set with
@@ -56,19 +56,19 @@ public class SlidingTabLayout extends HorizontalScrollView {
 
     private Context mContext;
 
-    private final SlidingTabStrip mTabStrip;
+    private final JNTabStrip mTabStrip;
     private int colorItemVisible, colorItemInvisible;
     private boolean mMathParent = true;
 
-    public SlidingTabLayout(Context context) {
+    public JNTabLayout(Context context) {
         this(context, null);
     }
 
-    public SlidingTabLayout(Context context, AttributeSet attrs) {
+    public JNTabLayout(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
     }
 
-    public SlidingTabLayout(Context context, AttributeSet attrs, int defStyle) {
+    public JNTabLayout(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
 
         this.mContext = context;
@@ -80,7 +80,7 @@ public class SlidingTabLayout extends HorizontalScrollView {
 
         mTitleOffset = (int) (TITLE_OFFSET_DIPS * getResources().getDisplayMetrics().density);
 
-        mTabStrip = new SlidingTabStrip(context);
+        mTabStrip = new JNTabStrip(context);
         addView(mTabStrip, LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
     }
 
@@ -143,7 +143,7 @@ public class SlidingTabLayout extends HorizontalScrollView {
     }
 
     /**
-     * Set the {@link ViewPager.OnPageChangeListener}. When using {@link SlidingTabLayout} you are
+     * Set the {@link ViewPager.OnPageChangeListener}. When using {@link JNTabLayout} you are
      * required to set any {@link ViewPager.OnPageChangeListener} through this method. This is so
      * that the layout can update it's scroll position correctly.
      *
@@ -206,7 +206,7 @@ public class SlidingTabLayout extends HorizontalScrollView {
      * {@link #setCustomTabView(int, int)}.
      */
     protected TextView createDefaultTabView(Context context) {
-        AutoResizeTextView textView = new AutoResizeTextView(context);
+        JNAutoResizeTextView textView = new JNAutoResizeTextView(context);
         textView.setGravity(Gravity.CENTER);
         textView.setTextSize(TypedValue.COMPLEX_UNIT_SP, TAB_VIEW_TEXT_SIZE_SP);
         textView.setTypeface(Typeface.DEFAULT, Typeface.BOLD);

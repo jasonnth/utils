@@ -15,9 +15,9 @@ import com.jasonngo.R;
 /**
  * Created on 12/17/14.
  */
-public class ColoredRatingBar extends View {
+public class JNColoredRatingBar extends View {
 
-    private static final String TAG = ColoredRatingBar.class.getSimpleName();
+    private static final String TAG = JNColoredRatingBar.class.getSimpleName();
 
     private Bitmap mRatedStar;
     private Bitmap mProgressBackground;
@@ -48,28 +48,28 @@ public class ColoredRatingBar extends View {
          * @param fromUser  True if the rating change was initiated by a user's
          *                  touch gesture or arrow key/horizontal trackbell movement.
          */
-        void onRatingChanged(ColoredRatingBar ratingBar, float rating, boolean fromUser);
+        void onRatingChanged(JNColoredRatingBar ratingBar, float rating, boolean fromUser);
 
     }
 
     private OnRatingBarChangeListener mOnRatingBarChangeListener;
 
-    public ColoredRatingBar(Context context) {
+    public JNColoredRatingBar(Context context) {
         this(context, null);
     }
 
-    public ColoredRatingBar(Context context, AttributeSet attrs) {
+    public JNColoredRatingBar(Context context, AttributeSet attrs) {
         //this(context, attrs, R.attr.coloredRatingBarStyle);
         this(context, attrs, 0);
     }
 
-    public ColoredRatingBar(Context context, AttributeSet attrs, int defStyle) {
+    public JNColoredRatingBar(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
 
-        TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.ColoredRatingBar,
+        TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.JNColoredRatingBar,
                 defStyle, 0);
-        final boolean indicator = a.getBoolean(R.styleable.ColoredRatingBar_indicator, false);
-        final float rating = a.getFloat(R.styleable.ColoredRatingBar_rating, -1);
+        final boolean indicator = a.getBoolean(R.styleable.JNColoredRatingBar_indicator, false);
+        final float rating = a.getFloat(R.styleable.JNColoredRatingBar_rating, -1);
         a.recycle();
 
         setIndicator(indicator);

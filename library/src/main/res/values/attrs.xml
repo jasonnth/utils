@@ -5,7 +5,7 @@
         <attr name="customFont" format="string" />
     </declare-styleable>
 
-    <declare-styleable name="ColoredRatingBar">
+    <declare-styleable name="JNColoredRatingBar">
         <attr name="indicator" format="boolean" />
         <attr name="rating" format="float" />
     </declare-styleable>
@@ -21,18 +21,6 @@
             <enum name="number" value="2" />
             <enum name="password" value="3" />
             <enum name="normal" value="4" />
-        </attr>
-    </declare-styleable>
-
-    <declare-styleable name="TabBarButton">
-        <attr name="tabName" format="string" />
-        <attr name="tabIcon" format="integer" />
-        <attr name="tabType" format="enum">
-            <enum name="service" value="0" />
-            <enum name="history" value="1" />
-            <enum name="request" value="2" />
-            <enum name="notification" value="3" />
-            <enum name="more" value="4" />
         </attr>
     </declare-styleable>
 

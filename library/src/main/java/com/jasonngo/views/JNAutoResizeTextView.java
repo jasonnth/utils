@@ -30,7 +30,7 @@ import android.widget.TextView;
  * @author Chase Colburn
  * @since Apr 4, 2011
  */
-public class AutoResizeTextView extends JNTextView {
+public class JNAutoResizeTextView extends JNTextView {
 
 	// Minimum text size for this text view
 	public static final float MIN_TEXT_SIZE = 2;
@@ -68,17 +68,17 @@ public class AutoResizeTextView extends JNTextView {
 	private boolean mAddEllipsis = true;
 
 	// Default constructor override
-	public AutoResizeTextView(Context context) {
+	public JNAutoResizeTextView(Context context) {
 		this(context, null);
 	}
 
 	// Default constructor when inflating from XML file
-	public AutoResizeTextView(Context context, AttributeSet attrs) {
+	public JNAutoResizeTextView(Context context, AttributeSet attrs) {
 		this(context, attrs, 0);
 	}
 
 	// Default constructor override
-	public AutoResizeTextView(Context context, AttributeSet attrs, int defStyle) {
+	public JNAutoResizeTextView(Context context, AttributeSet attrs, int defStyle) {
 		super(context, attrs, defStyle);
 		mTextSize = getTextSize();
 	}
