@@ -23,7 +23,10 @@
 
         <com.jasonngo.views.JNTextInputView
             android:layout_width="363dp"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            app:hint="@string/app_name"
+            app:title="@string/sf_ui_display_regular"
+            app:titleColor="#33000000"/>
 
         <com.jasonngo.views.JNImageView
             android:layout_width="match_parent"

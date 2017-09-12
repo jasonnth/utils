@@ -2,6 +2,7 @@ package com.jasonngo.views;
 
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.graphics.Color;
 import android.support.annotation.Nullable;
 import android.support.annotation.StringRes;
 import android.text.Editable;
@@ -55,9 +56,6 @@ public class JNTextInputView extends FrameLayout implements TextWatcher {
 
     private void initLayout(Context context, @Nullable AttributeSet attrs) {
         LayoutInflater.from(getContext()).inflate(R.layout.text_input_layout, this);
-        if (isInEditMode()) {
-            return;
-        }
 
         mInputRootView = findViewById(R.id.mInputRootView);
         mInputTextView = findViewById(R.id.mInputTextView);
@@ -71,11 +69,14 @@ public class JNTextInputView extends FrameLayout implements TextWatcher {
         String title = styledAttrs.getString(R.styleable.JNTextInputView_title);
         String hintText = styledAttrs.getString(R.styleable.JNTextInputView_hint);
         int inputType = styledAttrs.getInt(R.styleable.JNTextInputView_inputType, 4);
+        int titleColor = styledAttrs.getColor(R.styleable.JNTextInputView_titleColor, Color.BLACK);
         styledAttrs.recycle();
 
         if (title != null) {
             mInputTextView.setText(title);
         }
+
+        mInputTextView.setTextColor(titleColor);
 
         if (hintText != null) {
             mInputEditView.setHint(hintText);
@@ -87,7 +88,6 @@ public class JNTextInputView extends FrameLayout implements TextWatcher {
             btnShowPassword.setVisibility(VISIBLE);
             btnShowPassword.animate().alpha(0).start();
         }
-
 
         if (weightOptional > 0) {
             LinearLayout.LayoutParams paramsTitle = (LinearLayout.LayoutParams) mInputTextView.getLayoutParams();

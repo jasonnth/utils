@@ -51,6 +51,9 @@ public class JNButton extends AppCompatButton {
      * @param pFontName font name to load.
      */
     public void loadFont(final Context pContext, final String pFontName) {
+        if (isInEditMode()) {
+            return;
+        }
         Typeface font = Typeface.createFromAsset(pContext.getAssets(), "fonts/" + pFontName);
         setTypeface(font);
     }
