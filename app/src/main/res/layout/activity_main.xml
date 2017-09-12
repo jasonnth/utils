@@ -17,7 +17,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <com.jasonngo.views.JNTextInputView
+        <com.jasonngo.views.JNButton
             android:layout_width="363dp"
             android:layout_height="wrap_content"/>
 
@@ -25,5 +25,8 @@
             android:layout_width="363dp"
             android:layout_height="wrap_content"/>
 
+        <com.jasonngo.views.JNImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
     </LinearLayout>
 </LinearLayout>

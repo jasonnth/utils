@@ -29,6 +29,9 @@ public class JNTextView extends AppCompatTextView {
     }
 
     private void setCustomFont(final Context context, final AttributeSet attrs) {
+        if (isInEditMode()) {
+            return;
+        }
         // Load the attrs.xml file
         final TypedArray styledAttrs = context.obtainStyledAttributes(attrs, R.styleable.TypefaceTextView);
 
