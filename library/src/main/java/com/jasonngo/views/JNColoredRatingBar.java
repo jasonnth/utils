@@ -6,6 +6,7 @@ import android.content.res.TypedArray;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
+import android.support.annotation.DrawableRes;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
@@ -83,6 +84,12 @@ public class JNColoredRatingBar extends View {
         Resources res = getResources();
         mRatedStar = BitmapFactory.decodeResource(res, R.drawable.ic_star_selected);
         mProgressBackground = BitmapFactory.decodeResource(res, R.drawable.ic_star);
+    }
+
+    public void setIconRate(@DrawableRes int pNormalResId, @DrawableRes int pSelectedResId) {
+        Resources res = getResources();
+        mRatedStar = BitmapFactory.decodeResource(res, pSelectedResId);
+        mProgressBackground = BitmapFactory.decodeResource(res, pNormalResId);
     }
 
     @Override

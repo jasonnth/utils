@@ -38,6 +38,10 @@ public class JNImageView extends LinearLayout {
 
     private void initLayout(AttributeSet attrs){
         LayoutInflater.from(getContext()).inflate(R.layout.image_view_layout, this);
+        if (isInEditMode()) {
+            return;
+        }
+
         mImageView  = findViewById(R.id.mImageView);
         mImageView  = findViewById(R.id.mIVProgressBar);
 

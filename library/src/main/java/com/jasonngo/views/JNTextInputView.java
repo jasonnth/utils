@@ -55,6 +55,10 @@ public class JNTextInputView extends FrameLayout implements TextWatcher {
 
     private void initLayout(Context context, @Nullable AttributeSet attrs) {
         LayoutInflater.from(getContext()).inflate(R.layout.text_input_layout, this);
+        if (isInEditMode()) {
+            return;
+        }
+
         mInputRootView = findViewById(R.id.mInputRootView);
         mInputTextView = findViewById(R.id.mInputTextView);
         mInputEditView = findViewById(R.id.mInputEditView);
@@ -63,17 +67,20 @@ public class JNTextInputView extends FrameLayout implements TextWatcher {
 
         // Load the attrs.xml file
         final TypedArray styledAttrs = context.obtainStyledAttributes(attrs, R.styleable.JNTextInputView);
+        float weightOptional = styledAttrs.getFloat(R.styleable.JNTextInputView_weight, 0f);
         String title = styledAttrs.getString(R.styleable.JNTextInputView_title);
+        String hintText = styledAttrs.getString(R.styleable.JNTextInputView_hint);
+        int inputType = styledAttrs.getInt(R.styleable.JNTextInputView_inputType, 4);
+        styledAttrs.recycle();
+
         if (title != null) {
             mInputTextView.setText(title);
         }
 
-        String hintText = styledAttrs.getString(R.styleable.JNTextInputView_hint);
         if (hintText != null) {
             mInputEditView.setHint(hintText);
         }
 
-        int inputType = styledAttrs.getInt(R.styleable.JNTextInputView_inputType, 4);
         mInputType = InputType.values()[inputType];
         mInputEditView.setInputType(android.text.InputType.TYPE_CLASS_TEXT | getInputType(mInputType));
         if (mInputType == InputType.PASSWORD) {
@@ -81,7 +88,7 @@ public class JNTextInputView extends FrameLayout implements TextWatcher {
             btnShowPassword.animate().alpha(0).start();
         }
 
-        float weightOptional = styledAttrs.getFloat(R.styleable.JNTextInputView_weight, 0f);
+
         if (weightOptional > 0) {
             LinearLayout.LayoutParams paramsTitle = (LinearLayout.LayoutParams) mInputTextView.getLayoutParams();
             paramsTitle.weight = weightOptional;

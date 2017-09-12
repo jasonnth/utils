@@ -9,20 +9,20 @@
 
     <com.jasonngo.views.JNTextView
         android:id="@+id/mInputTextView"
-        style="@style/CommonTextViewStyle"
-        android:textSize="@dimen/subhead_text_size" />
+        style="@style/TextViewStyle"
+        android:textSize="16sp" />
 
     <LinearLayout
         android:id="@+id/mInputContentView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/padding_very_large"
+        android:layout_marginLeft="20dp"
         android:gravity="center_vertical"
         android:orientation="horizontal">
 
         <com.jasonngo.views.JNEditView
             android:id="@+id/mInputEditView"
-            style="@style/EditText.None"
+            style="@style/EditTextStyle"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:hint="input" />
