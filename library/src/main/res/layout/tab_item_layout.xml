@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:duplicateParentState="true"
+    android:background="?selectableItemBackground">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/mTabItemIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="12dp"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_centerVertical="true"
+            android:gravity="center_vertical"
+            android:layout_toRightOf="@+id/mTabItemIcon">
+
+            <com.jasonngo.views.JNTextView
+                android:id="@+id/mTabItemText"
+                style="@style/TextViewStyle"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="9"
+                android:gravity="center_vertical"
+                android:text="Text"/>
+
+            <ImageView
+                android:id="@+id/mTabItemIconRight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone" />
+
+            <com.jasonngo.views.JNTextView
+                android:id="@+id/mTabItemTextRight"
+                style="@style/TextViewStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:alpha="0.5"
+                android:textSize="14sp"
+                android:visibility="gone" />
+        </LinearLayout>
+
+        <View
+            android:id="@+id/mTabItemDivider"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="#CFCFCF"
+            android:layout_toRightOf="@+id/mTabItemIcon"
+            android:layout_alignParentBottom="true" />
+    </RelativeLayout>
+
+</LinearLayout>

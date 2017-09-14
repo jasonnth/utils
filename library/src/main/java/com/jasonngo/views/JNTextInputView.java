@@ -236,16 +236,6 @@ public class JNTextInputView extends FrameLayout implements TextWatcher {
     }
 
     /**
-     * set error's input
-     *
-     * @param resId
-     */
-    public void setError(@StringRes int resId) {
-        mInputEditView.requestFocus();
-        mInputEditView.setText(resId);
-    }
-
-    /**
      * set focus change listener
      *
      * @param onFocusChangeListener
