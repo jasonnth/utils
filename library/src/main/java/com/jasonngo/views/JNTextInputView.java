@@ -159,6 +159,14 @@ public class JNTextInputView extends FrameLayout implements TextWatcher {
         }
     }
 
+    public JNTextView getInputTextView() {
+        return mInputTextView;
+    }
+
+    public JNEditView getInputEditView() {
+        return mInputEditView;
+    }
+
     /**
      * get text input
      */
@@ -254,6 +262,18 @@ public class JNTextInputView extends FrameLayout implements TextWatcher {
         this.onTextChange = onTextChange;
     }
 
+
+    /**
+     * set OnClick
+     * @param pOnClickListener
+     */
+    public void setOnClickListener(View.OnClickListener pOnClickListener) {
+        if (pOnClickListener != null) {
+            mInputEditView.setFocusableInTouchMode(false);
+            mInputEditView.setFocusable(false);
+            mInputEditView.setOnClickListener(pOnClickListener);
+        }
+    }
     //======================== end public methods =====================
 
 

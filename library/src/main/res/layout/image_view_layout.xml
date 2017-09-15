@@ -14,5 +14,16 @@
         style="@style/ProgressBarStyle"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:layout_centerInParent="true" />
+        android:layout_centerInParent="true"
+        android:alpha="0"/>
+
+    <ImageButton
+        android:id="@+id/mIVReload"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="?selectableItemBackgroundBorderless"
+        android:src="@drawable/ic_refreshing"
+        android:alpha="0"
+        android:visibility="gone"/>
 </RelativeLayout>
