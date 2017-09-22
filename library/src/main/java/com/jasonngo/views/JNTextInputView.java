@@ -85,8 +85,8 @@ public class JNTextInputView extends FrameLayout implements TextWatcher {
         mInputType = InputType.values()[inputType];
         mInputEditView.setInputType(android.text.InputType.TYPE_CLASS_TEXT | getInputType(mInputType));
         if (mInputType == InputType.PASSWORD) {
+            btnShowPassword.animate().alpha(0).setDuration(0).start();
             btnShowPassword.setVisibility(VISIBLE);
-            btnShowPassword.animate().alpha(0).start();
         }
 
         if (weightOptional > 0) {

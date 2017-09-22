@@ -18,7 +18,7 @@ import com.bumptech.glide.load.resource.bitmap.GlideBitmapDrawable;
 import com.bumptech.glide.request.animation.GlideAnimation;
 import com.bumptech.glide.request.target.SimpleTarget;
 import com.jasonngo.R;
-import com.jasonngo.helper.NetworkUtil;
+import com.jasonngo.utils.Network;
 import com.jasonngo.imageUtils.IBImageLoader;
 
 /**
@@ -98,7 +98,7 @@ public class JNImageView extends LinearLayout implements View.OnClickListener {
                     super.onLoadFailed(e, errorDrawable);
                     mImageView.setImageResource(mPlaceHolderResId);
                     mProgressBar.animate().alpha(0).start();
-                    if (isShowReload && !NetworkUtil.isMobileNetworkAvailable(getContext()))
+                    if (isShowReload && !Network.isMobileNetworkAvailable(getContext()))
                         btnReload.animate().alpha(1).start();
                 }
             });
