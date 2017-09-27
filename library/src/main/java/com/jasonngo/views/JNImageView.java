@@ -7,6 +7,7 @@ import android.support.annotation.DrawableRes;
 import android.support.annotation.Nullable;
 import android.text.TextUtils;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageButton;
@@ -89,8 +90,11 @@ public class JNImageView extends LinearLayout implements View.OnClickListener {
                 public void onResourceReady(GlideBitmapDrawable resource, GlideAnimation glideAnimation) {
                     mImageView.setImageDrawable(resource);
                     mProgressBar.animate().alpha(0).start();
-                    if (isShowReload)
+                    if (isShowReload) {
                         btnReload.animate().alpha(0).start();
+                        btnReload.setClickable(false);
+                        btnReload.setOnClickListener(null);
+                    }
                 }
 
                 @Override
@@ -100,6 +104,7 @@ public class JNImageView extends LinearLayout implements View.OnClickListener {
                     mProgressBar.animate().alpha(0).start();
                     if (isShowReload && !Network.isMobileNetworkAvailable(getContext()))
                         btnReload.animate().alpha(1).start();
+                    Log.e("JNImageView", e.getLocalizedMessage());
                 }
             });
         } else {
