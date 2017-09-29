@@ -26,7 +26,6 @@
 
     <declare-styleable name="JNImageView">
         <attr name="src" format="integer" />
-        <attr name="showReload" format="boolean" />
     </declare-styleable>
 
     <declare-styleable name="JNTabItemView">

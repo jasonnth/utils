@@ -26,18 +26,14 @@ import com.jasonngo.imageUtils.IBImageLoader;
  * Created by Jason Ngo on 9/8/17.
  */
 
-public class JNImageView extends LinearLayout implements View.OnClickListener {
-
+public class JNImageView extends LinearLayout{
+    
     ImageView mImageView;
     ProgressBar mProgressBar;
-    ImageButton btnReload;
-
     private String mImageUrl = "";
     private
     @DrawableRes
     int mPlaceHolderResId;
-
-    private boolean isShowReload;
 
     public JNImageView(Context context) {
         super(context, null);
@@ -56,19 +52,11 @@ public class JNImageView extends LinearLayout implements View.OnClickListener {
 
         mImageView = findViewById(R.id.mImageView);
         mProgressBar = findViewById(R.id.mIVProgressBar);
-        btnReload = findViewById(R.id.mIVReload);
-
         // Load the attrs.xml file
         final TypedArray styledAttrs = getContext().obtainStyledAttributes(attrs, R.styleable.JNImageView);
         final Drawable imageDrawable = styledAttrs.getDrawable(R.styleable.JNImageView_src);
-        isShowReload = styledAttrs.getBoolean(R.styleable.JNImageView_showReload, false);
         styledAttrs.recycle();
-
         mImageView.setImageDrawable(imageDrawable);
-        if (isShowReload) {
-            btnReload.setVisibility(VISIBLE);
-            btnReload.setOnClickListener(this);
-        }
     }
 
     public void setImageUrl(String pUrl, final @DrawableRes int pResId) {
@@ -90,11 +78,6 @@ public class JNImageView extends LinearLayout implements View.OnClickListener {
                 public void onResourceReady(GlideBitmapDrawable resource, GlideAnimation glideAnimation) {
                     mImageView.setImageDrawable(resource);
                     mProgressBar.animate().alpha(0).start();
-                    if (isShowReload) {
-                        btnReload.animate().alpha(0).start();
-                        btnReload.setClickable(false);
-                        btnReload.setOnClickListener(null);
-                    }
                 }
 
                 @Override
@@ -102,25 +85,11 @@ public class JNImageView extends LinearLayout implements View.OnClickListener {
                     super.onLoadFailed(e, errorDrawable);
                     mImageView.setImageResource(mPlaceHolderResId);
                     mProgressBar.animate().alpha(0).start();
-                    if (isShowReload && !Network.isMobileNetworkAvailable(getContext()))
-                        btnReload.animate().alpha(1).start();
                     Log.e("JNImageView", e.getLocalizedMessage());
                 }
             });
         } else {
             mImageView.setImageResource(mPlaceHolderResId);
         }
-    }
-
-    @Override
-    public void onClick(View view) {
-        btnReload.animate().alpha(0).start();
-        mProgressBar.animate().alpha(1).start();
-        btnReload.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                loadImage();
-            }
-        }, 2000);
     }
 }
