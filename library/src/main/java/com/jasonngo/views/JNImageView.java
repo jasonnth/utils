@@ -27,7 +27,7 @@ import com.jasonngo.imageUtils.IBImageLoader;
  */
 
 public class JNImageView extends LinearLayout{
-    
+
     ImageView mImageView;
     ProgressBar mProgressBar;
     private String mImageUrl = "";
