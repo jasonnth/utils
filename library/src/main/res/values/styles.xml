@@ -31,5 +31,12 @@
         <item name="android:textSize">16sp</item>
         <item name="android:ellipsize">end</item>
     </style>
+
+    <style name="ToolbarShadowStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">4dp</item>
+        <item name="android:background">@drawable/toolbar_shadow</item>
+    </style>
+
 </resources>
 
