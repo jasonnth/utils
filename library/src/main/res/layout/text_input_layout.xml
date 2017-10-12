@@ -10,7 +10,7 @@
     <com.jasonngo.views.JNTextView
         android:id="@+id/mInputTextView"
         style="@style/TextViewStyle"
-        android:textColor="#212121"
+        android:textColor="@color/colorTextPrimary"
         android:textSize="17sp" />
 
     <LinearLayout
@@ -27,7 +27,7 @@
             android:layout_width="0dp"
             android:layout_weight="1"
             android:textSize="16sp"
-            android:textColor="#212121"
+            android:textColor="@color/colorTextSecond"
             android:textColorHint="#A3A3A3"/>
 
         <ImageButton
