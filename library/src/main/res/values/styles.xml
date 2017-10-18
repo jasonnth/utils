@@ -26,7 +26,7 @@
         <item name="android:maxLines">1</item>
         <item name="android:minLines">1</item>
         <item name="android:textAppearance">?android:attr/textAppearanceMedium</item>
-        <item name="android:textColorHint">#33000000</item>
+        <item name="android:textColorHint">@color/colorTextHint</item>
         <item name="android:inputType">textCapSentences</item>
         <item name="android:textSize">16sp</item>
         <item name="android:ellipsize">end</item>
