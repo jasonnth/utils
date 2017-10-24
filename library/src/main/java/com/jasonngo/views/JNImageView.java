@@ -92,4 +92,16 @@ public class JNImageView extends LinearLayout{
             mImageView.setImageResource(mPlaceHolderResId);
         }
     }
+
+    public ImageView getImageView() {
+        return mImageView;
+    }
+
+    public ProgressBar getProgressBar() {
+        return mProgressBar;
+    }
+
+    public String getImageUrl() {
+        return mImageUrl;
+    }
 }
