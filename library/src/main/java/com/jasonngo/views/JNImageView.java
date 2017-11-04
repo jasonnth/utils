@@ -2,24 +2,20 @@ package com.jasonngo.views;
 
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.support.annotation.DrawableRes;
 import android.support.annotation.Nullable;
 import android.text.TextUtils;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.View;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 
-import com.bumptech.glide.load.resource.bitmap.GlideBitmapDrawable;
-import com.bumptech.glide.request.animation.GlideAnimation;
 import com.bumptech.glide.request.target.SimpleTarget;
+import com.bumptech.glide.request.transition.Transition;
 import com.jasonngo.R;
-import com.jasonngo.utils.Network;
 import com.jasonngo.imageUtils.IBImageLoader;
 
 /**
@@ -73,19 +69,19 @@ public class JNImageView extends LinearLayout{
     private void loadImage() {
         if (!TextUtils.isEmpty(mImageUrl)) {
             mProgressBar.animate().alpha(1).start();
-            IBImageLoader.safeGlideImageLoadWithCallback(getContext(), mImageUrl, new SimpleTarget<GlideBitmapDrawable>() {
+            IBImageLoader.safeGlideImageLoadWithCallback(getContext(), mImageUrl, new SimpleTarget<BitmapDrawable>() {
+
                 @Override
-                public void onResourceReady(GlideBitmapDrawable resource, GlideAnimation glideAnimation) {
+                public void onResourceReady(BitmapDrawable resource, Transition<? super BitmapDrawable> transition) {
                     mImageView.setImageDrawable(resource);
                     mProgressBar.animate().alpha(0).start();
                 }
 
                 @Override
-                public void onLoadFailed(Exception e, Drawable errorDrawable) {
-                    super.onLoadFailed(e, errorDrawable);
+                public void onLoadFailed(@Nullable Drawable errorDrawable) {
+                    super.onLoadFailed(errorDrawable);
                     mImageView.setImageResource(mPlaceHolderResId);
                     mProgressBar.animate().alpha(0).start();
-                    Log.e("JNImageView", e.getLocalizedMessage());
                 }
             });
         } else {

@@ -15,5 +15,10 @@
         style="@style/ToolbarShadowStyle"
         android:layout_marginTop="?actionBarSize" />
 
+    <com.jasonngo.views.JNImageView
+        android:id="@+id/mJNImageView"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="?actionBarSize"/>
 
 </RelativeLayout>

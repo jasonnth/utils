@@ -3,15 +3,20 @@ package com.jasonngo.imageUtils;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
+import android.support.annotation.Nullable;
 import android.util.Log;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.resource.drawable.GlideDrawable;
-import com.bumptech.glide.request.animation.GlideAnimation;
+import com.bumptech.glide.load.DataSource;
+import com.bumptech.glide.load.engine.GlideException;
+import com.bumptech.glide.request.RequestListener;
+import com.bumptech.glide.request.RequestOptions;
+import com.bumptech.glide.request.target.BaseTarget;
 import com.bumptech.glide.request.target.SimpleTarget;
-import com.bumptech.glide.request.target.ViewTarget;
-import com.bumptech.glide.signature.StringSignature;
+import com.bumptech.glide.request.target.SizeReadyCallback;
+import com.bumptech.glide.request.target.Target;
+import com.bumptech.glide.request.transition.Transition;
 
 import java.util.UUID;
 import java.util.regex.Matcher;
@@ -78,16 +83,17 @@ public final class IBImageLoader {
             public void execute() {
                 Glide.with(pImageView.getContext())
                         .load(thumbnailUrl)
-                        .into(new ViewTarget<ImageView, GlideDrawable>(pImageView) {
+                        .into(new SimpleTarget<Drawable>() {
+
                             @Override
-                            public void onResourceReady(GlideDrawable resource, GlideAnimation<? super GlideDrawable> glideAnimation) {
+                            public void onResourceReady(Drawable resource, Transition<? super Drawable> transition) {
                                 Log.d("onResourceReady:", thumbnailUrl);
-                                this.view.setImageDrawable(resource);
+                                pImageView.setImageDrawable(resource);
                             }
 
                             @Override
-                            public void onLoadFailed(Exception e, Drawable errorDrawable) {
-                                super.onLoadFailed(e, errorDrawable);
+                            public void onLoadFailed(@Nullable Drawable errorDrawable) {
+                                super.onLoadFailed(errorDrawable);
                                 Log.d("onLoadFailed: ", thumbnailUrl + " || Loading: " + pUri);
                                 Glide.with(pImageView.getContext()).load(pUri).into(pImageView); // fallback if thumbnail doesn't exist
                             }
@@ -107,7 +113,7 @@ public final class IBImageLoader {
         doSafeLoad(new IBImageLoadExecutor() {
             @Override
             public void execute() {
-                Glide.with(pContext).load(pUrl).into(pImageView);
+                Glide.with(pContext).load(pUrl.replace("https", "http")).into(pImageView);
             }
         });
     }
@@ -123,7 +129,7 @@ public final class IBImageLoader {
         doSafeLoad(new IBImageLoadExecutor() {
             @Override
             public void execute() {
-                Glide.with(pContext).load(pUrl).signature(new StringSignature(UUID.randomUUID().toString())).crossFade().into(pImageView);
+                Glide.with(pContext).load(pUrl.replace("https", "http")).into(pImageView);
             }
         });
     }
@@ -139,23 +145,23 @@ public final class IBImageLoader {
         doSafeLoad(new IBImageLoadExecutor() {
             @Override
             public void execute() {
-                Glide.with(pContext).load(pUrl).into(pSimpleTarget);
+                Glide.with(pContext).load(pUrl.replace("https", "http")).into(pSimpleTarget);
             }
         });
     }
 
-    /**
+   /* *//**
      * Get Bitmap from Url.
      *
      * @param pContext
      * @param pUrl
      * @param pBitmapLoader callback to receive the bitmap
-     */
+     *//*
     public static void getGlideBitmap(final Context pContext, final String pUrl, final IBitmapLoader pBitmapLoader) {
         doSafeLoad(new IBImageLoadExecutor() {
             @Override
             public void execute() {
-                Glide.with(pContext).load(pUrl).asBitmap().into(new SimpleTarget<Bitmap>() {
+                Glide.with(pContext).load(pUrl).into(new SimpleTarget<Bitmap>() {
                     @Override
                     public void onResourceReady(Bitmap resource, GlideAnimation<? super Bitmap> glideAnimation) {
                         pBitmapLoader.onBitmapLoaded(resource);
@@ -163,7 +169,7 @@ public final class IBImageLoader {
                 });
             }
         });
-    }
+    }*/
 
 
     /**
