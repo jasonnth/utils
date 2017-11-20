@@ -15,5 +15,6 @@
         android:layout_width="20dp"
         android:layout_height="20dp"
         android:layout_centerInParent="true"
-        android:alpha="0"/>
+        android:alpha="0"
+        android:visibility="gone"/>
 </RelativeLayout>
