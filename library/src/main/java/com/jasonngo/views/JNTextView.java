@@ -66,7 +66,7 @@ public class JNTextView extends AppCompatTextView {
     public void setTextHtml(String pText) {
         CharSequence text;
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-            text = Html.fromHtml(pText, 0);
+            text = Html.fromHtml(pText, Html.FROM_HTML_MODE_LEGACY);
         } else {
             text = Html.fromHtml(pText);
         }
